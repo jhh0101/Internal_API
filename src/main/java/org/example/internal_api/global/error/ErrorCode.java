@@ -9,7 +9,9 @@ import org.springframework.http.HttpStatus;
 public enum ErrorCode {
 
     INVALID_INPUT_VALUE(HttpStatus.BAD_REQUEST, "C001", "잘못된 입력 값입니다."),
-    USER_NOT_FOUND(HttpStatus.NOT_FOUND, "U001", "사용자를 찾을 수 없습니다."),
+    RIOT_USER_NOT_FOUND(HttpStatus.NOT_FOUND, "R001", "해당 라이엇 계정을 찾을 수 없습니다."),
+    RIOT_RATE_LIMIT_EXCEEDED(HttpStatus.TOO_MANY_REQUESTS, "R002","라이엇 API 호출 횟수를 초과했습니다. 잠시 후 다시 시도해주세요."),
+    RIOT_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "R003","라이엇 서버 통신 중 알 수 없는 에러가 발생했습니다."),
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "S999", "서버 내부 오류가 발생했습니다.");
 
     /*
